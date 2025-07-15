@@ -9,6 +9,8 @@ def main() :
     influx.initialize(default_config_file)
 
     ui = UI()
+    ui.set_db_callback(influx.influxdb_read)
+    ui.show_window()
 
     while True:
         pass
