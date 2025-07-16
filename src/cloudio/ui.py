@@ -105,11 +105,10 @@ class UI:
         if self.check_format():
             # Ready to request the database
             text = self.topics_list.toPlainText()
-            lines = text.splitlines()
-            cleaned_lines = [line.strip() for line in lines if line.strip()]
-            cleaned = '\n'.join(cleaned_lines)
+            topics = [line for line in text.splitlines() if line.strip()]
+
             try:
-                data = self.callback_db(self.start.text(), self.end.text(), cleaned)
+                data = self.callback_db(self.start.text(), self.end.text(), topics)
             except Exception as e:
                 QMessageBox.critical(
                     self.window,
