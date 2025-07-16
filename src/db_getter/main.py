@@ -1,9 +1,10 @@
 from paths import update_working_directory
-from src.cloudio.influx import Influx
-from src.cloudio.ui import UI
+from influx import Influx
+from ui import UI
+from path_getter import resource_path
 
 def main() :
-    default_config_file = '../../config/client.config'  # Default config file
+    default_config_file = resource_path('config/client.config')  # Default config file
 
     influx = Influx()
     influx.initialize(default_config_file)

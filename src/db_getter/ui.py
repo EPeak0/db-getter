@@ -7,6 +7,7 @@ from PyQt5.QtCore import Qt, QDateTime
 from param import ParamSelector
 from csv_writer import write_to_csv, write_to_csv_aligned
 from title_label import TitleLabel
+from path_getter import resource_path
 
 
 class UI:
@@ -179,10 +180,10 @@ class UI:
         db_layout = QVBoxLayout()
 
         # Build DB layout
-        database_svg = QSvgWidget("../../asset/database.svg")
+        database_svg = QSvgWidget(resource_path("asset/database.svg"))
         database_svg.setFixedSize(100, 175)
 
-        data_flow_from_svg = QSvgWidget("../../asset/data_flow_arrow.svg")
+        data_flow_from_svg = QSvgWidget(resource_path("asset/data_flow_arrow.svg"))
         data_flow_from_svg.setFixedSize(53, 54)
         data_flow_to_svg_parent = QVBoxLayout()
         data_flow_to_svg_parent.addWidget(data_flow_from_svg)
@@ -202,7 +203,7 @@ class UI:
         command_layout = QVBoxLayout()
 
         # Build Command layout
-        csv_svg = QSvgWidget("../../asset/csv_icon.svg")
+        csv_svg = QSvgWidget(resource_path("asset/csv_icon.svg"))
         csv_svg.setFixedSize(140, 90)
 
         execute_button = QPushButton("Execute")
@@ -224,7 +225,7 @@ class UI:
                                                         """)
         execute_button.setFixedSize(140, 40)
 
-        data_flow_to_svg = QSvgWidget("../../asset/data_flow_arrow_90.svg")
+        data_flow_to_svg = QSvgWidget(resource_path("asset/data_flow_arrow_90.svg"))
         data_flow_to_svg.setFixedSize(54, 53)
         data_flow_to_svg_parent = QVBoxLayout()
         data_flow_to_svg_parent.addWidget(data_flow_to_svg)

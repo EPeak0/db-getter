@@ -4,8 +4,9 @@ from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout,
     QComboBox, QTextEdit, QPushButton, QInputDialog, QMessageBox
 )
+from persistent_config import get_persistent_config_path
 
-PARAMS_FILE = "params.json"
+PARAMS_FILE = get_persistent_config_path("params.json")
 
 class ParamSelector(QWidget):
     def __init__(self):
