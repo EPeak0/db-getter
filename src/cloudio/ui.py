@@ -166,7 +166,7 @@ class UI:
             parent=self.window,
             caption="Save CSV in",
             directory="",
-            filter="CSV (*.csv);;Tous les fichiers (*)"
+            filter="CSV (*.csv);;Any file (*)"
         )
 
         if file_path:
