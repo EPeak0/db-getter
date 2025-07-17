@@ -13,8 +13,6 @@ def main() :
     ui.set_db_callback(influx.influxdb_read)
     ui.show_window()
 
-    while True:
-        pass
 
 if __name__ == '__main__':
     update_working_directory()
