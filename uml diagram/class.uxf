@@ -1,0 +1,22 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>790</x><y>290</y><w>280</w><h>120</h></coordinates><panel_attributes>influx:Influx
+-
+- config
+- initialized : Bool
+-
++ initialize(config_path)
++ influxdb_read(start_date, stop_date, topic)
+- get_data(topic, start, stop)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>470</y><w>220</w><h>40</h></coordinates><panel_attributes>client_influx:InfluxDBClient
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>920</x><y>400</y><w>100</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+client_influx</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>160</y><w>90</w><h>40</h></coordinates><panel_attributes>main
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>290</y><w>280</w><h>120</h></coordinates><panel_attributes>ui:UI
+-
++ set_db_callback(callback)
+- on_execute_clicked()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>470</y><w>180</w><h>40</h></coordinates><panel_attributes>app:QApplication
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>400</y><w>50</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+app</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>330</y><w>200</w><h>40</h></coordinates><panel_attributes>lt=&lt;..
+&lt;&lt;Use influxdb_read&gt;&gt;</panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>190</y><w>230</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+ui</panel_attributes><additional_attributes>210;10;210;60;10;60;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>190</y><w>250</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+influx</panel_attributes><additional_attributes>10;10;10;60;230;60;230;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>570</y><w>240</w><h>50</h></coordinates><panel_attributes>css_writer
+-
+write_to_csv(data : dict, filename : str)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>370</y><w>210</w><h>220</h></coordinates><panel_attributes>lt=&lt;..
+&lt;&lt;Use write_to_csv&gt;&gt;</panel_attributes><additional_attributes>90;200;90;10;10;10</additional_attributes></element></diagram>
